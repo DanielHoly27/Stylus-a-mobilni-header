@@ -15,12 +15,13 @@
              Obecně se bere maximální šířka cca 1300px
         -->
         <div class="wrapper">
+
             <!-- 
                 Zde je lepší si všechny sekce dát na itemy v divech, aby se dobře s nima dělalo přes display flex
                 Využívejte přehlednost v kódu pomocí class, pište první rodiče a pak potomka, přes stylus/SCSS můžeme vnořovat lépe selektory a kód je čistější
              -->
             <div class="wrapper-logo">
-                <img src="/img/availability-svgrepo-com.svg" alt="">
+                <img src="/img/system-of-a-down-logo-i7795.jpg" alt="">
             </div>
             <!--
                 Zde vytváříme ikonu hamburgeru, který je rozanimovaný
@@ -42,16 +43,40 @@
             <!--
                 # Je prázdný odkaz, bude nás odkazovat na jednu na stejnou stránku
             -->
-            <a href="#">Home page</a>
-            <a href="#">Login</a>
-            <a href="#">Register</a>
+            <a href="#">Home</a>
+            <a href="https://systemofadown.com/tour/">Tour</a>
+            <a href="https://store.systemofadown.com">Merch</a>
         </nav>
     </header>
     <main>
+        <div class="soad">
+            <img id="PC" src="/img/soad1.jpg" alt="">
+            <img id="Mobil" src="/img/soad_main.jpg" alt="">
+        </div>
+        <h1>Nejpopulárnější alba</h1>
+        <div class="spotify">
+            
+            <div id="Hypnotize" class="textik">
+                <p>Hypnotize</p>
+            </div>
 
+            <iframe class="embed" src="https://open.spotify.com/embed/album/1UeOoLhpWzpuM5cWQsbCXg?utm_source=generator" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+        </div>
+        <div class="spotify">
+            
+            <div id="Toxicity" class="textik">
+                <p>Toxicity</p>
+            </div>
+
+                <iframe class="embed" style="border-radius:12px" src="https://open.spotify.com/embed/album/6jWde94ln40epKIQCd8XUh?utm_source=generator"  height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+        </div>
     </main>
     <footer>
-
+        <a href="https://www.facebook.com/systemofadown"><img src="/img/facebook-176-svgrepo-com.svg" alt=""></a>
+        <a href="https://www.instagram.com/systemofadown"><img src="/img/instagram-svgrepo-com.svg" alt=""></a>
+        <a href="https://open.spotify.com/artist/5eAWCfyUhZtHHtBdNk56l1"><img src="/img/spotify-svgrepo-com.svg" alt=""></a>
+        <a href="https://www.youtube.com/channel/UC7-YMmnc0ppcWmio8t1WdcA"><img src="/img/youtube-svgrepo-com (1).svg" alt=""></a>
     </footer>
 </body>
 </html>

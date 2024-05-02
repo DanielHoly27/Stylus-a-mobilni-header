@@ -10,20 +10,20 @@ header {
   background-color: none;
 }
 header .wrapper {
+  width: 100%;
   max-width: 1300px;
-  margin: auto;
   display: flex;
   align-items: center;
   height: 100%;
   justify-content: space-between;
-  padding: 0 10px;
   background: #fff;
   z-index: 10;
   position: relative;
 }
 header .wrapper-logo {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
+  margin-left: 10px;
 }
 header .wrapper-logo img {
   width: 100%;
@@ -66,7 +66,7 @@ header nav {
   left: 50%;
   transform: translateX(-50%) translateY(-350px);
   z-index: 1;
-  width: 100%;
+  width: 100vw;
   display: flex;
   flex-direction: column;
   gap: 36px;
@@ -88,7 +88,6 @@ header nav a {
     z-index: 10;
     flex-direction: row;
     justify-content: flex-end;
-    padding-right: 60px;
     transform: translate(-50%, -150%);
     max-width: 1300px;
     background: none;
@@ -100,4 +99,96 @@ header nav a {
 }
 header .is-open {
   transform: translateX(-50%) translateY(0px);
+  background-color: #fff;
+}
+#PC {
+  width: 100%;
+}
+@media only screen and (max-width: 768px) {
+  #PC {
+    visibility: hidden;
+    height: 0px;
+    width: 0px;
+  }
+}
+#Mobil {
+  visibility: hidden;
+  width: 0px;
+}
+@media only screen and (max-width: 768px) {
+  #Mobil {
+    visibility: visible;
+    width: 100%;
+  }
+}
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main h1 {
+  font-family: sans-serif;
+  font-size: 30px;
+}
+.spotify {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 50px;
+}
+@media only screen and (max-width: 768px) {
+  .spotify {
+    flex-direction: column;
+    align-content: space-between;
+  }
+}
+.embed {
+  width: 50%;
+}
+@media only screen and (max-width: 768px) {
+  .embed {
+    width: 100%;
+  }
+}
+#Hypnotize {
+  background-image: url("/img/image-removebg-preview (1).png");
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-position-x: center;
+}
+#Toxicity {
+  background-image: url("/img/image-removebg-preview (4).png");
+  background-repeat: no-repeat;
+  background-position-y: 10px;
+  background-position-x: center;
+  background-size: 400px;
+}
+.textik {
+  display: flex;
+  flex-direction: row;
+  width: 50%;
+  justify-content: center;
+}
+@media only screen and (max-width: 768px) {
+  .textik {
+    width: 100%;
+    height: 275px;
+  }
+}
+.textik p {
+  font-family: Arial;
+  font-size: 25px;
+}
+footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 50px;
+  margin-top: 50px;
+  background-color: #000;
+}
+footer a img {
+  width: 50px;
+  height: 50px;
 }

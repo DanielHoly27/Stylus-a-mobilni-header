@@ -20,13 +20,13 @@ header
     //wrapper zde volám jako potomka header, do CSS se Vám vypíše jako - header .wrapper {Zde je pak Váš kód}
     //Pokud by byla mimo header (odsazená uplně vlevo) vyhledavál by .wrapper v celém body. Tímhle ho vyledá jen v headeru (ve svém rodiči)
     .wrapper
+        width: 100%
         max-width 1300px //Nastavujeme maximální šířku na 1300px
-        margin auto //Zarovnáme ho na prostředek, když bude šířka stránky vyšší než 1300px.
+        
         display flex //Nastavíme si jí jako displey flex pro lepší pozicování potomků
         align-items center //Nastavíme si Y souřadnici na prostředek, itemy budou naprostředky v Y souřadnici (vertikálně)
         height: 100% //Nastavíme si výšku na maximální výšku vůči svému rodiči
         justify-content: space-between //Nastavíme si X souřadnici na maximálnní gap mezi itemy. Jsou nejvíce od sebe
-        padding: 0 10px //Nastavíme nějaké normální vnitřní odsazení, tento zápis jen kratší (0 - horní dolní a 10px - levé a pracvé vnitřní odsazení)
         background rgb(255, 255, 255) //Nastavíme barvu na bílou, abychom pod ní mohli pak skrývat nav
         z-index 10 //Zde nastavujeme úroveň vstvy, vyšší má vyšší právo překrýt jiný element
         position relative //Díky tomu nám funguje z-index mezi wrapper a nav, wrapper bude překrývat pomocí z-index nav, pokud budou ve stejné pozici
@@ -35,8 +35,9 @@ header
         //& opíše svého rodiče a přídáte jméno potomka
         //&-logo je stejný jako .wrapper-logo
         &-logo
-            width: 50px //nastavíme výšku a šířku loga
-            height: 50px
+            width: 60px //nastavíme výšku a šířku loga
+            height: 60px
+            margin-left: 10px
 
             img
                 width: 100% //img se přizpůsobí maximální šířce i výšce svého rodiče
@@ -90,7 +91,7 @@ header
         //pomocí translateX nastavujeme souřadnici X, pro Y zase její souřadnici, můžeme používat procenta i jiné jednotky, pokud dáte 100%, tak se posune o 100% šírku nav
         transform: translateX(-50%) translateY(-350px) //Tímto srovnam i jeho content, že má být na prostředku, díky tomhle budeme animovat nav. Osa Y je na -350px, tím pádem nám úplně vyjede ze stránky pryč, tím že je apsolutní, nám nerozbije stránku.
         z-index: 1 //Nastavíme z-index na 1, aby se mohl skrývat pod .wrapper
-        width: 100% //roztáhneme celé menu na plnou šířku
+        width: 100vw //roztáhneme celé menu na plnou šířku
         display: flex //Chceme zarovnat itemy, takže použijeme pro pozicování displey flex
         flex-direction: column //Dáme si odkazy pod sebe - column jako sloupec
         gap: 36px //Nějaké odsazení mezi itemami
@@ -112,7 +113,6 @@ header
             z-index: 10 //Změníme úroveň vrstvy, protože chceme aby šla navigace vidět v headeru
             flex-direction: row //Ze sloupce uděláme řádek
             justify-content: flex-end //Je dost časté, že navigace je v pravo
-            padding-right: 60px //Aby nebyl header nalepený úplně u rohu, dáme mu odsazení jen na pravou stranu
             transform: translate(-50%, -150%) //Zde nastavíme pomocí positions absolute aby byl krásně uprostřed (-150%), X stále drříme defaultní hodnotu jako u prvního
             max-width: 1300px //Nastavíme maximální šířku na 1300px, translateX(-50%) o řádek víše nám hlídá, aby byl na prostředku
             background: none //Pokud byl nějaky background, tímhle ho vypnu, chci, aby byla stejná barva jakoje header
@@ -126,4 +126,90 @@ header
     .is-open
         //translateX(-50%) - musíme mu říct, že hodnota pro X je stále stejná jako v základu, jinak si jí dá do defaultní hodnoty 0
         transform: translateX(-50%) translateY(0px) //Zde nastavujeme, jak se pohne, pokud se třída přidá, měníme hlavně Y na 0, tím se nám navigace posune hned pod header.
+        background-color: white
+
+
+
+
+#PC
+    width: 100%
+    @media only screen and (max-width: 768px)
+        visibility: hidden
+        height: 0px
+        width: 0px
         
+
+#Mobil
+    visibility: hidden
+    width: 0px
+    @media only screen and (max-width: 768px)
+        visibility: visible
+        width: 100%
+    
+main
+    display: flex
+    flex-direction: column
+    align-items: center
+
+    h1
+        font-family: sans-serif
+        font-size: 30px
+        
+.spotify 
+    display: flex
+    flex-direction: row
+    justify-content: space-between
+    width: 100%
+    margin-top: 50px
+    
+    
+    @media only screen and (max-width: 768px)
+        flex-direction: column
+        align-content: space-between
+
+
+.embed
+    width: 50%
+    @media only screen and (max-width: 768px)
+        width: 100%
+    
+        
+#Hypnotize 
+    background-image: url("/img/image-removebg-preview (1).png")
+    background-repeat: no-repeat 
+    background-position-y: 10px
+    background-position-x: center
+
+#Toxicity
+    background-image: url("/img/image-removebg-preview (4).png")
+    background-repeat: no-repeat 
+    background-position-y: 10px
+    background-position-x: center
+    background-size: 400px
+
+.textik  
+    display: flex
+    flex-direction: row
+    width: 50%
+    justify-content: center
+    @media only screen and (max-width: 768px)
+        width: 100%
+        height: 275px
+        
+    p
+        font-family: Arial
+        font-size: 25px
+
+footer
+    display: flex
+    flex-direction: row
+    justify-content: center
+    gap: 50px
+    margin-top: 50px
+    background-color: rgb(0, 0, 0) 
+    a  
+        img          
+            width: 50px
+            height: 50px
+            
+             
